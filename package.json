@@ -3,5 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Leonardo Ribeiro",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.13"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
 }
