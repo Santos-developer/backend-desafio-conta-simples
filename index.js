@@ -7,6 +7,7 @@ app.use(express.json());
 
 consign()
   .then('./src/config/db.js')
+  .then('./src/config/routes.js')
   .into(app);
 
 app.listen(process.env.PORT, () => {
