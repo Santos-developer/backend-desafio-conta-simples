@@ -37,7 +37,33 @@ const login = async (req, res) => {
 
 const register = async (req, res) => {
   try {
-  } catch (message) {}
+    const userData = { ...req.body };
+    if (!userData.name) throw new Error("Insira um nome.");
+    if (!userData.email) throw new Error("Insira um E-mail.");
+
+    const exists = await userController.readByEmail(userData.email);
+    if (exists) throw new Error("Esse endereço de E-mail já foi cadastrado.");
+
+    if (!userData.password) throw new Error("Insira uma Senha.");
+    if (userData.password.length < 7)
+      throw new Error("A senha precisa ter no minimo 7 dígitos.");
+
+    // gerando códigos aleatórios.
+    const digit = Math.round(Math.random() * 8) + 1;
+    const agency = Math.round(Math.random() * 99999);
+
+    await userController.create({
+      name: userData.name,
+      email: userData.email,
+      password: userData.password,
+      digit: `000${digit}`,
+      agency: `${agency}-${digit}`
+    });
+
+    res.status(200).send('Usuário cadastrado.')
+  } catch (error) {
+    return res.status(400).send(error.message);
+  }
 };
 
 const requestOnlyAuthenticated = async (req, res, next) => {

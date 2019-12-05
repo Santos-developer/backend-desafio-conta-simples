@@ -8,7 +8,7 @@ const create = async (req, res) => {
     const status = await userController.create(userData);
     res.sendStatus(status);
   } catch (message) {
-    console.log(message) // verificando retornos.
+    console.log(message);
     return res.status(500).send(message);
   }
 };
@@ -21,6 +21,32 @@ const read = async (req, res) => {
   } catch (message) {
     return res.status(500).send(message);
   }
+};
+
+const readProfile = async (req, res) => {
+  const {
+    name,
+    email,
+    picture,
+    digit,
+    agency,
+    total,
+    rentability,
+    entries,
+    transactions
+  } = req.user;
+
+  res.status(200).json({
+    name,
+    email,
+    picture,
+    digit,
+    agency,
+    total,
+    rentability,
+    entries,
+    transactions
+  });
 };
 
 const update = async (req, res) => {
@@ -57,6 +83,7 @@ const encryptPassword = async password => {
 module.exports = {
   create,
   read,
+  readProfile,
   update,
   remove
 };
