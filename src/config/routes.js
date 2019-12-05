@@ -1,4 +1,5 @@
 const userAPI = require("../api/user");
+const authAPI = require("../api/auth");
 
 module.exports = app => {
   app
@@ -7,4 +8,8 @@ module.exports = app => {
     .post(userAPI.create)
     .patch(userAPI.update)
     .delete(userAPI.remove);
+
+  app
+    .route("/api/auth/login")
+    .post(authAPI.login)
 };

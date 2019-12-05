@@ -21,6 +21,14 @@ const read = async userID => {
   }
 };
 
+const readByEmail = async email => {
+  try {
+    return await userModel.findOne({ email: email });
+  } catch (error) {
+    return Promise.reject(error.message);
+  }
+};
+
 const update = async (userID, userData) => {
   try {
     await userModel.findByIdAndUpdate(userID, userData);
@@ -44,6 +52,7 @@ const remove = async userID => {
 module.exports = {
   create,
   read,
+  readByEmail,
   update,
   remove
 };
