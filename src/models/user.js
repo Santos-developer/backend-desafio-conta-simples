@@ -12,7 +12,8 @@ const userSchema = new Schema(
     total: { type: Schema.Types.Number, required: true, default: 0 },
     rentability: { type: Schema.Types.Number, required: true, default: 0 },
     entries: { type: Schema.Types.Number, required: true, default: 0 },
-    transactions: { type: Schema.Types.Array, required: true }
+    transactions: { type: Schema.Types.Array, required: true },
+    notifications: { type: Schema.Types.Array, required: true },
   },
   { timestamps: true }
 );
