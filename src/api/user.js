@@ -8,7 +8,7 @@ const create = async (req, res) => {
     const status = await userController.create(userData);
     res.sendStatus(status);
   } catch (message) {
-    console.log(message)
+    console.log(message) // verificando retornos.
     return res.status(500).send(message);
   }
 };
