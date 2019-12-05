@@ -1,8 +1,10 @@
 require("dotenv").config();
+const cors = require("cors");
 const consign = require("consign");
 const express = require("express");
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 consign()

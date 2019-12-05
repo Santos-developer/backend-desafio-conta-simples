@@ -36,6 +36,12 @@ const readProfile = async (req, res) => {
     transactions
   } = req.user;
 
+  const collectionOfTransactions = [];
+
+  transactions.forEach(transaction =>
+    collectionOfTransactions.push(transaction[0])
+  );
+
   res.status(200).json({
     name,
     email,
@@ -45,7 +51,7 @@ const readProfile = async (req, res) => {
     total,
     rentability,
     entries,
-    transactions
+    transactions: collectionOfTransactions
   });
 };
 
