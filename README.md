@@ -2,11 +2,13 @@
 
 ### `git clone https://github.com/Santos-developer/frontend-desafio-conta-simples.git`
 
-## Instalar dependencias
-### `npm install`
+## Instalar dependências
+
+### `yarn`
 
 ## Iniciar projeto
-### `npm start`
+
+### `yarn start`
 
 Data de entrega do desafio: Até 06/12/2019
 
