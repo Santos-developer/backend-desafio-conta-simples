@@ -1,11 +1,13 @@
-Clonar projeto
+## Clonar projeto
 
-git clone https://github.com/Santos-developer/frontend-desafio-conta-simples.git
+## `git clone https://github.com/Santos-developer/frontend-desafio-conta-simples.git`
 
-Instalar dependencias
-## npm install
+## Instalar dependencias
+### `npm install`
 
-Iniciar projeto
-## npm start
+## Iniciar projeto
+### `npm start`
 
-### Porta padrão 8000
+Data de entrega do desafio: Até 06/12/2019
+
+**Nota: PORTA PADRÃO 8000**
